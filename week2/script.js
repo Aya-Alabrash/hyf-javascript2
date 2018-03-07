@@ -78,7 +78,7 @@ let formated_result = tasks.reduce((temp, current) => {
 }).map((euro) => {
     //Output a formatted Euro amount
     return "€ " + euro.toFixed(2);
-})[0];
+});
 console.log("Maartje make at all " + formated_result);
 
 //Other way
