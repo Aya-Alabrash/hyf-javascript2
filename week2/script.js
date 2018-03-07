@@ -79,7 +79,7 @@ let formated_result = tasks.reduce((temp, current) => {
     //Output a formatted Euro amount
     return "€ " + euro.toFixed(2);
 })[0];
-console.log(formated_result);
+console.log("Maartje make at all " + formated_result);
 
 //Other way
 
@@ -116,4 +116,4 @@ rate_multiplied.forEach((fee) => {
 //Output a formatted Euro amount
 let formatted_amount = "€ " + sum.toFixed(2);
 
-console.log(formatted_amount);
+console.log("Maartje make at all " + formatted_amount);
