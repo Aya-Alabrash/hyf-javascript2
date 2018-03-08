@@ -68,7 +68,7 @@ let formated_result = tasks.reduce((temp, current) => {
     return (task.duration / 60);
 }).filter((duration) => {
     //Filter out everything that took two hours or more
-    return duration <= 2;
+    return duration < 2;
 }).map((rate) => {
     //Multiply the each duration by a per-hour rate for billing
     return rate * 20;
@@ -99,7 +99,7 @@ let hours = concat.map((task) => {
 
 //Filter out everything that took two hours or more
 let hours_filtered = hours.filter((duration) => {
-    return duration <= 2;
+    return duration < 2;
 });
 
 //Multiply the each duration by a per-hour rate for billing
