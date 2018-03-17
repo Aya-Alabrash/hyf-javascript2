@@ -6,14 +6,14 @@ setTimeout(doIt, 5000);
 
 //1
 function outerFunction(func) {
-    return func;
+    return func();
 }
 
 function innerFunction() {
     console.log('Hello World!');
 }
 
-outerFunction(innerFunction());
+outerFunction(innerFunction);
 
 //another example
 function foo(message) {
@@ -45,21 +45,16 @@ function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
     let myArr = [];
 
     for (let i = startIndex; i <= stopIndex; i++) {
+        myArr.push(i);
         if ((i % 3 === 0) && (i % 5 === 0)) {
             threeCallback(i);
             fiveCallback(i);
-            myArr.push(i);
         }
         else if (i % 3 == 0) {
             threeCallback(i);
-            myArr.push(i);
         }
         else if (i % 5 == 0) {
             fiveCallback(i);
-            myArr.push(i);
-        }
-        else {
-            myArr.push(i);
         }
     }
     return myArr;
@@ -72,7 +67,6 @@ console.log(myRes);
 //3.1 A for loop
 function repeatStringNumTimes(str, num) {
     let repeat = "";
-    if (num === 0) return "";
     for (let i = 1; i <= num; i++) {
         repeat = repeat.concat(str + ' ');
     }
@@ -84,7 +78,6 @@ console.log(res);
 //3.2 A while loop.
 function repeatStringNumTimesUsingWhile(str, num) {
     let repeat = "";
-    if (num === 0) return "";
     let i = 1;
     while (i <= num) {
         repeat = repeat.concat(str + ' ');
@@ -98,7 +91,7 @@ console.log(res2);
 //3.3 A do loop.
 function repeatStringNumTimesUsingDo(str, num) {
     let repeat = "";
-    if (num === 0) return "";
+    if (num <= 0) return "error number of repeat is not valid ";
     let i = 1;
     do {
         repeat = repeat.concat(str + ' ');
@@ -108,6 +101,8 @@ function repeatStringNumTimesUsingDo(str, num) {
 }
 let res3 = repeatStringNumTimesUsingDo('Bye', 5);
 console.log(res3);
+let res4 = repeatStringNumTimesUsingDo('Bye', -5);
+console.log(res4);
 
 //4
 var Car = function () {
