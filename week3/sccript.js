@@ -91,7 +91,7 @@ console.log(res2);
 //3.3 A do loop.
 function repeatStringNumTimesUsingDo(str, num) {
     let repeat = "";
-    if (num <= 0) return "error number of repeat is not valid ";
+    if (num <= 0) return repeat;
     let i = 1;
     do {
         repeat = repeat.concat(str + ' ');
